@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
@@ -62,3 +63,23 @@ function AppWrapper() {
 }
 
 export default AppWrapper;
+=======
+import React from 'react';
+import './App.css';
+import Slider from './Components/Slider';
+import Header from "./Components/Header";
+import Menu from "./Components/Menu"; // Import the Slider component
+
+function App() {
+  return (
+      <div className="App">
+          <Menu />
+        <header className="App-header">
+          <Slider /> {/* Use the Slider component */}
+        </header>
+      </div>
+  );
+}
+
+export default App;
+>>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610

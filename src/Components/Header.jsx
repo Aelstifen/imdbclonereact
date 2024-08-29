@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
@@ -37,3 +38,33 @@ const Header = ({ toggleMenu }) => {
 };
 
 export default Header;
+=======
+import React, { useState } from 'react';
+import './Header.css';
+
+const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <>
+            <div className="container">
+                <div className="listcontainer">
+
+                        <li>TV Shows
+                                <li>Trending TV Shows</li>
+                                <li>Top TV Shows</li>
+                        </li>
+
+
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Header;
+>>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610

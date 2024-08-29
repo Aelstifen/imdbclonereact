@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /*
+=======
+>>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610
 import React, {useState} from 'react';
 import './Slider.css'; // Assuming you have a CSS file for styling
 
@@ -34,6 +37,7 @@ const Slider = () => {
     );
 };
 
+<<<<<<< HEAD
 export default Slider;*/
 
 import React from 'react';
@@ -74,3 +78,6 @@ const Slider = () => {
 };
 
 export default Slider;
+=======
+export default Slider;
+>>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610

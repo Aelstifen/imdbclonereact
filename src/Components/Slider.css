@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /*
+=======
+>>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610
 .slider {
     width: 300px;
     overflow: hidden;
@@ -40,6 +43,7 @@
 .next {
     justify-content: flex-end;
 }
+<<<<<<< HEAD
 */
 .slider {
     position: relative;
@@ -146,3 +150,5 @@
     font-size: 24px;
     line-height: 24px;
 }
+=======
+>>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610
