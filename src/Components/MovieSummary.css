@@ -1,0 +1,15 @@
+.summary-container {
+    margin-top: 10px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px;
+    text-align: center; /* Centers the text */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie-summary {
+    font-size: 18px;
+    color: #ccc; /* Light grey color for the text */
+    line-height: 1.6;
+    margin: 0;
+}

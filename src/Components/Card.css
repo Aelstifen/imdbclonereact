@@ -1,0 +1,44 @@
+.card {
+    background-color: transparent; /* Make the card's background transparent */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures that the image and content stay within the card */
+    width: 200px;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Keep the image's corners rounded */
+}
+
+.card-content {
+    padding: 10px 0 0 0;
+    background-color: transparent; /* Make the content area background transparent */
+    box-shadow: none; /* Remove any box shadow */
+    border: none; /* Remove border */
+    width: 100%; /* Make sure it takes full width */
+    text-align: center; /* Center the text */
+}
+
+.card-title {
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+    padding: 0 10px; /* Add padding to keep text away from edges */
+}
+
+.card-description {
+    font-size: 14px;
+    color: #bbb;
+    margin: 5px 0 0 0; /* Adjust margin for spacing */
+    padding: 0 10px; /* Add padding to keep text away from edges */
+}
