@@ -1,54 +1,49 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
-import Header from "./Components/Header";
-import Menu from "./Components/Menu";
-import Slider from "./Components/Slider";
-import SamplePage from "./Components/SampleBrowsePage";
-import LoginPage from "./Components/SampleLoginPage"; // Import LoginPage
-import SignupPage from "./Components/SampleSignUpPage"; // Import SignupPage
-import MovieSummary from "./Components/MovieSummary";
+import Header from './Components/Header.jsx';
+import Menu from './Components/Menu.jsx';
+import Slider from './Components/Slider.jsx';
+import SamplePage from './Components/SampleBrowsePage.jsx';
+import ShowDetailsPage from './Components/Details.jsx';
+import LoginPage from './Components/SampleLoginPage.jsx';
+import SignupPage from './Components/SampleSignUpPage.jsx';
+import MovieSummary from './Components/MovieSummary.jsx';
+import Watchlist from './Components/Watchlist';
 
 function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const location = useLocation(); // Get the current location
+    const location = useLocation();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Determine if we should show the Slider based on the current path
-    const showSliderAndSummary = ![
-        '/top-movies',
-        '/trending-movies',
-        '/top-tv-shows',
-        '/trending-tv-shows',
-        '/login',
-        '/signup',
-    ].includes(location.pathname);
+    const isHome = location.pathname === '/';
 
     return (
         <div className="App">
             {!isMenuOpen && (
                 <>
                     <Header toggleMenu={toggleMenu} />
-                    {showSliderAndSummary && <Slider />}
-                    {showSliderAndSummary && (
-                        <MovieSummary summary="This is a sample movie summary. The movie tells the tale of an epic journey through unknown lands, filled with adventure, mystery, and excitement. The protagonists face numerous challenges and grow stronger as they uncover the secrets that shape their world." />
+                    {isHome && <Slider />}
+                    {isHome && (
+                        <MovieSummary summary="This is a sample movie summary. The movie tells the tale of an epic journey through unknown lands, filled with adventure, mystery, and excitement." />
                     )}
                 </>
             )}
             {isMenuOpen && <Menu onClose={toggleMenu} />}
 
-            {/* Define Routes */}
             <Routes>
+                <Route path="/" element={<></>} />
                 <Route path="/top-movies" element={<SamplePage />} />
                 <Route path="/trending-movies" element={<SamplePage />} />
                 <Route path="/top-tv-shows" element={<SamplePage />} />
                 <Route path="/trending-tv-shows" element={<SamplePage />} />
-                <Route path="/login" element={<LoginPage />} /> {/* Login route */}
-                <Route path="/signup" element={<SignupPage />} /> {/* Signup route */}
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/watchlist" element={<Watchlist />} />
+                <Route path="/show-details/:id" element={<ShowDetailsPage />} />
             </Routes>
         </div>
     );
@@ -63,23 +58,4 @@ function AppWrapper() {
 }
 
 export default AppWrapper;
-=======
-import React from 'react';
-import './App.css';
-import Slider from './Components/Slider';
-import Header from "./Components/Header";
-import Menu from "./Components/Menu"; // Import the Slider component
-
-function App() {
-  return (
-      <div className="App">
-          <Menu />
-        <header className="App-header">
-          <Slider /> {/* Use the Slider component */}
-        </header>
-      </div>
-  );
-}
-
-export default App;
->>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610
+// This is the main entry point of the application. It wraps the App component with Router to enable routing functionality.

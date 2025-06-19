@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Anime List Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            gap: 16px;
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .profile-username {
+            font-size: 20px;
+            font-weight: bold;
+            color: #f1f5f9;
+        }
+        .profile-nav-placeholder {
+            height: 50px; /* or adjust to match your design */
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .layout {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            padding: 20px;
+            background-color: #273449;
+            border-right: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #cbd5e1;
+        }
+
+        .sidebar input[type="text"],
+        .sidebar select {
+            width: 100%;
+            padding: 8px;
+            background-color: #334155;
+            border: none;
+            border-radius: 6px;
+            color: #f1f5f9;
+        }
+
+        .sidebar label {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .main h2 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .table-container {
+            background-color: #1e293b;
+            border-radius: 8px;
+            padding: 10px 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #e2e8f0;
+        }
+
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+
+        th {
+            color: #94a3b8;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        td img {
+            height: 50px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .title-cell {
+            display: flex;
+            align-items: center;
+        }
+
+        .filters {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filters button {
+            background-color: #334155;
+            border: none;
+            padding: 8px;
+            border-radius: 6px;
+            color: #f1f5f9;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.2s ease;
+        }
+
+        .filters button:hover {
+            background-color: #475569;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 4px;
+            background: #1e293b;
+            border-radius: 4px;
+            outline: none;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #38bdf8; /* Light blue */
+            border: 2px solid #0f172a; /* Dark border for contrast */
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #38bdf8;
+            border: 2px solid #0f172a;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="profile-header">
+    <img class="profile-avatar" src="https://picsum.photos/80" alt="Profile Picture"/>
+    <div class="profile-username">ysfaltasha</div>
+</div>
+
+
+<div class="profile-nav-placeholder"></div>
+
+<div class="layout">
+    <div class="sidebar">
+        <input type="text" placeholder="🔍 Filter"/>
+
+        <div class="filters">
+            <h2>Lists</h2>
+            <button>All</button>
+            <button>Watching</button>
+            <button>Completed</button>
+            <button>Dropped</button>
+            <button>Planning</button>
+        </div>
+
+        <div class="filters">
+            <h2>Filters</h2>
+            <select>
+                <option selected hidden>Format</option>
+                <option>TV</option>
+                <option>Movie</option>
+            </select>
+
+            <select>
+                <option selected hidden>Status</option>
+                <option>Airing</option>
+                <option>Completed</option>
+            </select>
+
+            <select>
+                <option selected hidden>Genres</option>
+                <option>Action</option>
+                <option>Comedy</option>
+            </select>
+
+            <select>
+                <option selected hidden>Country</option>
+                <option>Japan</option>
+                <option>USA</option>
+            </select>
+
+            <label for="year-range">Year</label>
+            <input type="range" id="year-range" name="year-range" min="1980" max="2025" />
+
+            <select>
+                <option selected hidden>Sort</option>
+                <option>Progress</option>
+                <option>Score</option>
+            </select>
+        </div>
+
+    </div>
+
+
+
+    <div class="main">
+        <h2>Watching</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Score</th>
+                    <th>Progress</th>
+                    <th>Type</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="title-cell"><img src="https://picsum.photos/75/50" alt="Blue Box">Blue Box</td>
+                    <td>8</td>
+                    <td>8/25</td>
+                    <td>ONA</td>
+                </tr>
+                <tr>
+                    <td class="title-cell"><img src="https://picsum.photos/75/50" alt="Boruto">Boruto</td>
+                    <td>7</td>
+                    <td>105/293</td>
+                    <td>TV</td>
+                </tr>
+                <tr>
+                    <td class="title-cell"><img src="https://picsum.photos/75/50" alt="KamiKatsu">KamiKatsu</td>
+                    <td>–</td>
+                    <td>0/12</td>
+                    <td>TV</td>
+                </tr>
+                <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

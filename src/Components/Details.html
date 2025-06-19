@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .movie-detail-page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .movie-header {
+            display: flex;
+            padding: 20px;
+            background-color: #1e293b;
+            border-bottom: 2px solid #334155;
+        }
+
+        .movie-poster img {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-right: 20px;
+        }
+
+        .movie-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .movie-info h1 {
+            margin: 0;
+            font-size: 26px;
+            color: #f1f5f9;
+        }
+
+        .summary {
+            margin-top: 10px;
+            font-size: 15px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            max-width: 800px;
+        }
+
+        .movie-body {
+            display: flex;
+            flex: 1;
+            background-color: #0f172a;
+        }
+
+        .movie-stats {
+            width: 280px;
+            background-color: #1e293b;
+            padding: 20px;
+            border-right: 1px solid #334155;
+        }
+
+        .movie-stats p {
+            margin: 12px 0;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .movie-stats p strong {
+            display: block;
+            color: #f1f5f9;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .actor-grid {
+            flex: 1;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px;
+            background-color: #0f172a;
+            justify-content: start;
+        }
+
+        .actor-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e293b;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            height: 80px;
+            transition: background-color 0.3s;
+        }
+
+        .actor-card:hover {
+            background-color: #273449;
+        }
+
+        .actor-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .actor-image {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            object-fit: cover;
+            margin-left: 10px;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="movie-detail-page">
+    <section class="movie-header">
+        <div class="movie-poster">
+            <img src="https://picsum.photos/150/220" alt="Movie Poster" />
+        </div>
+        <div class="movie-info">
+            <h1>Movie Title</h1>
+            <p class="summary">
+                This is the summary of the movie or TV show. It gives a short description about the plot, setting, and theme.
+            </p>
+        </div>
+    </section>
+
+    <section class="movie-body">
+        <aside class="movie-stats">
+            <p><strong>Total Number Of Episodes:</strong> 24</p>
+            <p><strong>Total Number Of Seasons:</strong> 2</p>
+            <p><strong>Genre:</strong> Action, Fantasy</p>
+            <p><strong>Score:</strong> 8.7</p>
+        </aside>
+
+        <main class="actor-grid">
+            <!-- 12 example actor cards -->
+            <div class="actor-card"><div class="actor-name">Actor 1</div><img src="https://picsum.photos/60?random=1" alt="Actor 1" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 2</div><img src="https://picsum.photos/60?random=2" alt="Actor 2" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 3</div><img src="https://picsum.photos/60?random=3" alt="Actor 3" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 4</div><img src="https://picsum.photos/60?random=4" alt="Actor 4" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 5</div><img src="https://picsum.photos/60?random=5" alt="Actor 5" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 6</div><img src="https://picsum.photos/60?random=6" alt="Actor 6" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 7</div><img src="https://picsum.photos/60?random=7" alt="Actor 7" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 8</div><img src="https://picsum.photos/60?random=8" alt="Actor 8" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 9</div><img src="https://picsum.photos/60?random=9" alt="Actor 9" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 10</div><img src="https://picsum.photos/60?random=10" alt="Actor 10" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 11</div><img src="https://picsum.photos/60?random=11" alt="Actor 11" class="actor-image" /></div>
+            <div class="actor-card"><div class="actor-name">Actor 12</div><img src="https://picsum.photos/60?random=12" alt="Actor 12" class="actor-image" /></div>
+        </main>
+    </section>
+</div>
+</body>
+</html>

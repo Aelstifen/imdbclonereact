@@ -8,6 +8,11 @@
     color: #fff;
     text-align: center;
 }
+.input-error {
+    border: 2px solid red !important;
+    outline: none !important;
+    box-shadow: 0 0 4px red !important;
+}
 .login-container{
     width: 300px;
     display: block;
@@ -67,3 +72,6 @@ h2 {
 .auth-button:hover {
     background-color: #CC9A00; /* Slightly darker shade for hover effect */
 }
+
+
+

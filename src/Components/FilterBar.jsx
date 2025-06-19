@@ -1,58 +1,157 @@
 import React from 'react';
 import './FilterBar.css';
+import { FaChevronDown, FaTimes } from 'react-icons/fa';
 
-const FilterBar = ({ onSearch, onFilterChange }) => {
-    const years = Array.from({ length: 25 }, (_, i) => 2024 - i); // Generates years from 2024 to 2000
+const FilterBar = ({
+                       onSearch,
+                       onFilterChange,
+                       availableGenres = [],
+                       availableFormats = [],
+                       yearRange = {},
+                       filters = {},
+                       clearFilter
+                   }) => {
+
+    const generateYearOptions = () => {
+        const options = [];
+        if (yearRange.min !== null && yearRange.max !== null) {
+            for (let year = yearRange.max; year >= yearRange.min; year--) {
+                options.push(year);
+            }
+        }
+        return options;
+    };
+
+    const handleGenreChange = (e) => {
+        const selected = e.target.value;
+        let updatedGenres = [...filters.genres];
+        if (!updatedGenres.includes(selected)) {
+            updatedGenres.push(selected);
+            onFilterChange('genres', updatedGenres);
+        }
+    };
 
     return (
-        <div className="filter-bar">
-            <div className="filter-item">
-                <label htmlFor="search">Search</label>
-                <input
-                    type="text"
-                    id="search"
-                    placeholder="Search..."
-                    onChange={(e) => onSearch(e.target.value)}
-                />
+        <>
+            <div className="filter-bar">
+
+                {/* Search (with icons now) */}
+                <div className="filter-item">
+                    <label htmlFor="search">Search</label>
+                    <div className="select-with-icon-wrapper">
+                        <input
+                            type="text"
+                            id="search"
+                            placeholder="Search..."
+                            value={filters.search}
+                            onChange={(e) => onSearch(e.target.value)}
+                            className="select-with-icon"
+                        />
+                        <div className="icon-overlay">
+                            {filters.search ? (
+                                <FaTimes className="select-icon" onClick={() => clearFilter('search')} />
+                            ) : null}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Genres */}
+                <div className="filter-item">
+                    <label htmlFor="genres">Genres</label>
+                    <div className="select-with-icon-wrapper">
+                        <select
+                            id="genres"
+                            onChange={handleGenreChange}
+                            className="select-with-icon"
+                            value={filters.genres.length > 0 ? filters.genres[0] : ""}
+                        >
+                            <option value="">Select Genre</option>
+                            {availableGenres.map((g) => (
+                                <option key={g} value={g}>
+                                    {g.charAt(0).toUpperCase() + g.slice(1)}
+                                </option>
+                            ))}
+                        </select>
+
+                        <div className="icon-overlay">
+                            {filters.genres.length > 0 ? (
+                                <FaTimes className="select-icon" onClick={() => clearFilter('genres')} />
+                            ) : (
+                                <FaChevronDown className="select-icon" />
+                            )}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Format */}
+                <div className="filter-item">
+                    <label htmlFor="format">Format</label>
+                    <div className="select-with-icon-wrapper">
+                        <select
+                            id="format"
+                            value={filters.format}
+                            onChange={(e) => onFilterChange('format', e.target.value)}
+                            className="select-with-icon"
+                        >
+                            <option value="any">Any</option>
+                            {availableFormats.map((f) => (
+                                <option key={f} value={f}>{f}</option>
+                            ))}
+                        </select>
+
+                        <div className="icon-overlay">
+                            {filters.format !== 'any' ? (
+                                <FaTimes className="select-icon" onClick={() => clearFilter('format')} />
+                            ) : (
+                                <FaChevronDown className="select-icon" />
+                            )}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Year */}
+                <div className="filter-item">
+                    <label htmlFor="year">Year</label>
+                    <div className="select-with-icon-wrapper">
+                        <select
+                            id="year"
+                            value={filters.year}
+                            onChange={(e) => onFilterChange('year', e.target.value)}
+                            className="select-with-icon"
+                        >
+                            <option value="any">Any</option>
+                            {generateYearOptions().map((year) => (
+                                <option key={year} value={year}>{year}</option>
+                            ))}
+                        </select>
+
+                        <div className="icon-overlay">
+                            {filters.year !== 'any' ? (
+                                <FaTimes className="select-icon" onClick={() => clearFilter('year')} />
+                            ) : (
+                                <FaChevronDown className="select-icon" />
+                            )}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="filter-item">
-                <label htmlFor="genres">Genres</label>
-                <select id="genres" onChange={(e) => onFilterChange('genres', e.target.value)}>
-                    <option value="any">Any</option>
-                    <option value="action">Action</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="drama">Drama</option>
-                    {/* Add more genres as needed */}
-                </select>
-            </div>
-            <div className="filter-item">
-                <label htmlFor="year">Year</label>
-                <select id="year" onChange={(e) => onFilterChange('year', e.target.value)} size="1">
-                    <option value="any">Any</option>
-                    {years.map(year => (
-                        <option key={year} value={year}>{year}</option>
+
+            {/* Display selected genres */}
+            {filters.genres.length > 0 && (
+                <div className="selected-genres-row">
+                    {filters.genres.map((g) => (
+                        <span key={`${g}`} className="selected-genre">
+                            {g}
+                            <button
+                                onClick={() => onFilterChange('genres', filters.genres.filter(x => x !== g))}
+                            >
+                                ×
+                            </button>
+                        </span>
                     ))}
-                </select>
-            </div>
-            <div className="filter-item">
-                <label htmlFor="format">Format</label>
-                <select id="format" onChange={(e) => onFilterChange('format', e.target.value)}>
-                    <option value="any">Any</option>
-                    <option value="tv">TV</option>
-                    <option value="movie">Movie</option>
-                    {/* Add more formats as needed */}
-                </select>
-            </div>
-            <div className="filter-item">
-                <label htmlFor="status">Airing Status</label>
-                <select id="status" onChange={(e) => onFilterChange('status', e.target.value)}>
-                    <option value="any">Any</option>
-                    <option value="airing">Airing</option>
-                    <option value="completed">Completed</option>
-                    <option value="upcoming">Upcoming</option>
-                </select>
-            </div>
-        </div>
+                </div>
+            )}
+        </>
     );
 };
 

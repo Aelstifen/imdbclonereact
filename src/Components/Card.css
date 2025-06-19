@@ -1,23 +1,26 @@
 .card {
-    background-color: transparent; /* Make the card's background transparent */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensures that the image and content stay within the card */
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
     width: 200px;
     margin: 10px;
     transition: transform 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 360px; /* control full height (300 image + text below) */
 }
+
 
 .card:hover {
     transform: scale(1.05); /* Slightly enlarge the card on hover */
 }
 
 .card-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* Keep the image's corners rounded */
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 .card-content {

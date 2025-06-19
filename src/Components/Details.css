@@ -1,0 +1,116 @@
+/* Details.css */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+.movie-detail-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.movie-header {
+    display: flex;
+    padding: 20px;
+    background-color: #1e293b;
+    border-bottom: 2px solid #334155;
+}
+
+.movie-poster img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-right: 20px;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movie-info h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #f1f5f9;
+}
+
+.summary {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #cbd5e1;
+    line-height: 1.5;
+    max-width: 800px;
+}
+
+.movie-body {
+    display: flex;
+    flex: 1;
+    background-color: #0f172a;
+}
+
+.movie-stats {
+    width: 280px;
+    background-color: #1e293b;
+    padding: 20px;
+    border-right: 1px solid #334155;
+}
+
+.movie-stats p {
+    margin: 12px 0;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.movie-stats p strong {
+    display: block;
+    color: #f1f5f9;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.actor-grid {
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    background-color: #0f172a;
+    justify-content: start;
+}
+
+.actor-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e293b;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    height: 80px;
+    transition: background-color 0.3s;
+}
+
+.actor-card:hover {
+    background-color: #273449;
+}
+
+.actor-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.actor-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-left: 10px;
+    border: 2px solid #fff;
+}

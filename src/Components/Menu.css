@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-
 .menucontainer {
     position: relative;
     display: flex;
@@ -10,15 +7,7 @@
     padding: 20px; /* Add some padding to the container */
     background-color: #191919; /* Dark background like IMDb */
     min-height: 100vh; /* Ensure it covers the full viewport height */
-=======
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #191919;
-    color: #fff;
->>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610
 }
-
 header {
     display: flex;
     justify-content: space-between;
@@ -26,13 +15,10 @@ header {
     padding: 10px;
     background-color: #000;
 }
-
 .logo {
     font-size: 24px;
     font-weight: bold;
 }
-
-<<<<<<< HEAD
 .close-button-container {
     width: 120%;
     display: flex;
@@ -40,7 +26,6 @@ header {
     padding: 10px 20px;
     box-sizing: border-box;
 }
-
 .close-button {
     background-color: yellow;
     border-radius: 50%;
@@ -53,17 +38,14 @@ header {
     height: 40px; /* Adjust the size for better visibility */
     transition: background-color 0.3s ease;
 }
-
 .close-button:hover {
     background-color: #ffcc00; /* Darker yellow on hover */
 }
-
 .close-button span {
     color: black;
     font-size: 20px;
     font-weight: bold;
 }
-
 nav {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -74,7 +56,6 @@ nav {
     justify-content: center;
     align-items: center;
 }
-
 .listcontainer {
     width: 100%;
     display: flex;
@@ -82,38 +63,31 @@ nav {
     padding: 0;
     gap: 20px; /* Space between the columns */
 }
-
 .listcontainer ul {
     padding: 0;
     margin: 0;
     list-style: none;
     color: #fff; /* Text color */
 }
-
 .listcontainer ul li {
     margin-bottom: 30px;
     font-size: 16px;
     cursor: pointer;
 }
-
 .listcontainer ul li a:hover {
     color: #ffcc00; /* Yellow color on hover */
     text-decoration: underline;
 }
-
 .listcontainer ul li span {
     color: #ffcc00; /* Highlighted text color for icons or main items */
 }
-
 .listcontainer ul li a {
     color: #fff;
     text-decoration: none;
 }
-
 .listcontainer ul li a:hover {
     text-decoration: underline;
 }
-
 /* Add specific styles to mimic IMDb sections */
 .listcontainer ul li.section-title {
     font-weight: bold;
@@ -123,56 +97,3 @@ nav {
     border-bottom: 2px solid #444;
     padding-bottom: 5px;
 }
-=======
-.close-button {
-    cursor: pointer;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav li {
-    margin-right: 20px;
-    position: relative;
-}
-
-nav li img {
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
-    vertical-align: middle;
-}
-
-nav li span {
-    vertical-align: middle;
-}
-
-nav li:hover .sub-menu {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #222;
-    border: 1px solid #333;
-    padding: 10px;
-    z-index: 1;
-}
-
-nav li:hover .sub-menu li {
-    display: block;
-    margin: 5px 0;
-}
-
-nav li:hover .sub-menu li a {
-    color: #fff;
-    text-decoration: none;
-}
->>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610

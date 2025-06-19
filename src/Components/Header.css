@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .header {
     height: 60px;
     display: flex;
@@ -7,7 +6,8 @@
     padding: 0 20px;
     background-color: #000;
     color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05)
 }
 
 .container {
@@ -15,11 +15,13 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
 }
 
 .menu-container {
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 
 .menu-toggle {
@@ -58,11 +60,62 @@
     background-color: #333;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    width: 100%;
+
+}
+
+.search-toggle-button {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #000;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.search-bar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: max-width 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    max-width: 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: fadeInScale 0.3s ease forwards;
+}
+
+.search-bar-wrapper.visible {
+    width: 100%;
+    max-width: 100%;
+    opacity: 1;
+    transform: scaleX(1);
+
+}
+
+.search-toggle-button:hover {
+    background-color: #222;
+}
+
+
 .search-bar {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
+    padding: 5px;
+    gap: 6px;
+    width: 100%;
 }
 
 .search-category {
@@ -92,6 +145,17 @@
     cursor: pointer;
 }
 
+.search-close-button {
+    background: none;
+    color: #aaa;
+    border: none;
+    font-size: 18px;
+}
+
+.search-close-button:hover {
+    color: #f33;
+}
+
 .right-buttons {
     display: flex;
     align-items: center;
@@ -111,7 +175,7 @@
 .right-buttons > button:hover {
     background-color: #333;
 }
-=======
+
 .hamburger {
     display: none;
     font-size: 24px;
@@ -152,6 +216,7 @@
     .hamburger {
         display: block;
     }
+
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -164,11 +229,12 @@
         padding: 20px;
         z-index: 999;
     }
+
     .nav-menu.open {
         display: block; /* Display the menu when the 'open' class is applied */
     }
+
     .nav-menu li {
         margin-bottom: 20px;
     }
 }
->>>>>>> b4d5f92cc3402d27f460fd693cea28090e3f1610
