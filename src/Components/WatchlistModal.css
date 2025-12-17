@@ -1,0 +1,134 @@
+.card .watchlist-button {
+    position: absolute;
+    right: 8px;
+    bottom: 10px;
+}
+
+.watchlist-button {
+    position: static;
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    padding: 6px 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.2s ease-in-out;
+}
+.watchlist-button:hover {
+    background-color: #0056b3;
+}
+
+.watchlist-floating-wrapper {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.watchlist-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+}
+
+.watchlist-modal {
+    background-color: #1e1e1e;
+    padding: 30px 20px;
+    border-radius: 10px;
+    z-index: 9999;
+    width: 300px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.watchlist-modal h3 {
+    margin: 0 0 20px;
+    font-size: 22px;
+    color: #e0e0e0;
+}
+
+.watchlist-modal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.watchlist-modal li {
+    background-color: #2e2e2e;
+    color: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.watchlist-modal li:hover {
+    background-color: #3a3a3a;
+}
+
+.watchlist-close {
+    margin-top: 20px;
+    padding: 8px 14px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.watchlist-close:hover {
+    background-color: #777;
+}
+
+.add-to-watchlist-button .watchlist-button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 90%;
+    background-color: #4db8ff;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 6px;
+    font-size: 0px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.add-to-watchlist-button .watchlist-button:hover {
+    background-color: #36a3e0;
+}
+
+.add-to-watchlist-button .watchlist-button::after {
+    content: " ▼";
+    font-size: 14px;
+    margin-left: 6px;
+}
+
+.add-to-watchlist-button .watchlist-button::before {
+    content: "Add to List";
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.watchlist-modal li.selected-category {
+    font-weight: bold;
+    color: #4ecdc4;
+    background-color: #222;
+}

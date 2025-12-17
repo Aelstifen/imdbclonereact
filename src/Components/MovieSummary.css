@@ -1,0 +1,37 @@
+.summary-container {
+    margin-top: 10px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie-summary {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.summary-toggle {
+    background: none;
+    border: none;
+    color: #4db8ff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    margin-left: 8px;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.summary-toggle:hover {
+    color: #36a3e0;
+}
+
+.summary-toggle:focus {
+    outline: 2px solid #4db8ff;
+    outline-offset: 2px;
+    border-radius: 2px;
+}

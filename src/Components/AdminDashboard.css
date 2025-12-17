@@ -1,0 +1,60 @@
+.admin-dashboard-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 16px;
+}
+
+.admin-dashboard-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.admin-global-search {
+    padding: 8px 12px;
+    min-width: 250px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-muted);
+    color: var(--color-text-primary);
+}
+.admin-global-search:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+}
+
+.admin-actions-header {
+    display: flex;
+    gap: 12px;
+}
+
+.admin-button-add {
+    background-color: var(--color-accent-success);
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.admin-button-add:hover {
+    background-color: var(--color-accent-success-hover);
+    transform: scale(1.05);
+}

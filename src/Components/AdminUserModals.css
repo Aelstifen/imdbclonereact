@@ -1,0 +1,216 @@
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.admin-modal {
+    background-color: #2c2c2e;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+}
+
+.admin-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+.admin-modal-close:hover {
+    color: #fff;
+}
+
+.admin-modal-title {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.admin-modal-content {
+    overflow-y: auto;
+    color: #f5f5f7;
+}
+
+.admin-modal-loading,
+.admin-modal-error {
+    text-align: center;
+    padding: 30px;
+    font-size: 16px;
+}
+
+.admin-modal-error {
+    color: #ff453a;
+}
+
+.admin-modal-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.admin-modal-info-item {
+    background-color: #3a3a3c;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-modal-info-item strong {
+    font-size: 12px;
+    color: #aaa;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.admin-modal-info-item span {
+    font-size: 16px;
+    color: #fff;
+    word-break: break-all;
+}
+
+.admin-modal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-modal-table th,
+.admin-modal-table td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+.admin-modal-table th {
+    background-color: #3a3a3c;
+    font-size: 14px;
+}
+
+.admin-modal-table tbody tr:hover {
+    background-color: #3f3f41;
+}
+
+.admin-role-select {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.admin-role-select:hover {
+    border-color: #666;
+}
+
+.admin-role-select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.admin-modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.admin-button-save {
+    background-color: #4a9eff;
+    color: #fff;
+}
+
+.admin-button-save:hover:not(:disabled) {
+    background-color: #3a8eef;
+}
+
+.admin-button-save:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-button-delete {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.admin-button-delete:hover:not(:disabled) {
+    background-color: #c0392b;
+}
+
+.admin-button-delete:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-button-cancel {
+    background-color: #555;
+    color: #fff;
+}
+
+.admin-button-cancel:hover:not(:disabled) {
+    background-color: #666;
+}
+
+.admin-button-cancel:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-delete-confirm {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2a1a1a;
+    border: 1px solid #e74c3c;
+    border-radius: 6px;
+}
+
+.admin-delete-confirm p {
+    color: #fff;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+}
+
+.admin-delete-confirm-buttons {
+    display: flex;
+    gap: 10px;
+}
+

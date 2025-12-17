@@ -1,0 +1,185 @@
+.admin-season-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.admin-season-modal-wrapper {
+    background-color: #2a2d34;
+    border-radius: 12px;
+    padding: 30px;
+    min-width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.admin-season-close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bolder;
+    cursor: pointer;
+    z-index: 1051;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.admin-season-close-modal:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+}
+
+.admin-season-modal {
+    color: #e0e0e0;
+}
+
+.admin-season-modal h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.admin-season-modal .form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-season-modal label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #c0c0c0;
+}
+
+.admin-season-modal input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #666;
+    background-color: #3a3d46;
+    color: #fff;
+    outline: none;
+}
+
+.admin-season-modal input:focus {
+    border-color: #66b3ff;
+    box-shadow: 0 0 0 2px rgba(102, 179, 255, 0.25);
+}
+
+.admin-season-save-message {
+    text-align: center;
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: rgba(40, 167, 69, 0.2);
+    border-radius: 5px;
+}
+
+.admin-season-modal .actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.admin-season-modal .actions button{
+    flex: 1;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: normal;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.save-btn {
+    background-color: #28a745;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.save-btn:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.admin-season-modal .actions .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-top: 0;
+}
+
+.admin-season-modal .actions .delete-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.admin-season-save-message {
+    text-align: center;
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: rgba(40, 167, 69, 0.2);
+    border-radius: 5px;
+}
+
+.admin-season-error-message {
+    text-align: center;
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: rgba(220, 53, 69, 0.2);
+    border-radius: 5px;
+}
+
+.admin-season-info-message {
+    text-align: center;
+    color: #17a2b8;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: rgba(23, 162, 184, 0.2);
+    border-radius: 5px;
+}
